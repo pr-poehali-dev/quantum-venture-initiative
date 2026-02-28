@@ -1,53 +1,54 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Icon from "@/components/ui/icon"
 
 const features = [
   {
-    title: "Адаптивная нейрообработка",
-    description: "Самооптимизирующиеся алгоритмы, которые обучаются на нейронных паттернах и улучшают интерпретацию сигналов.",
-    icon: "brain",
-    badge: "ИИ",
+    icon: "Shield",
+    badge: "Надёжно",
+    title: "Реальная защита",
+    description: "Деф-защита от проверенного продавца. Каждый заказ выполняется вручную и лично.",
   },
   {
-    title: "Медицинская защита",
-    description: "Шифрование по стандартам FDA со сквозной защитой конфиденциальных нейронных данных.",
-    icon: "lock",
-    badge: "Сертификат",
+    icon: "Zap",
+    badge: "Быстро",
+    title: "Мгновенная выдача",
+    description: "После оплаты защита приходит в течение нескольких минут прямо в Telegram.",
   },
   {
-    title: "Интуитивное управление",
-    description: "Естественная трансляция мыслей в действия с откликом менее миллисекунды и точностью 99,7%.",
-    icon: "globe",
-    badge: "Точность",
+    icon: "MessageCircle",
+    badge: "Поддержка",
+    title: "Личный контакт",
+    description: "Покупка напрямую у @longotipov — никаких ботов, живое общение и помощь.",
   },
   {
-    title: "Предиктивная калибровка",
-    description: "ML-модели, которые предугадывают намерения пользователя и оптимизируют нейронные пути.",
-    icon: "zap",
-    badge: "Умный",
+    icon: "Star",
+    badge: "Качество",
+    title: "Три уровня защиты",
+    description: "Выбирай нужный уровень: базовый, Apex или Full — под любые задачи.",
   },
   {
-    title: "Биометрическая интеграция",
-    description: "Бесшовная синхронизация с мониторингом жизненных показателей для контроля здоровья.",
-    icon: "link",
-    badge: "Связь",
+    icon: "Users",
+    badge: "Комьюнити",
+    title: "Своё сообщество",
+    description: "Часть активного Telegram-комьюнити геймеров, которые ценят надёжность.",
   },
   {
-    title: "Поддержка XR",
-    description: "Нативная совместимость с AR/VR-средами для терапевтических и рабочих приложений.",
-    icon: "target",
-    badge: "XR Ready",
+    icon: "Lock",
+    badge: "Доверие",
+    title: "Проверенный продавец",
+    description: "Сотни довольных покупателей. Репутация в комьюнити говорит сама за себя.",
   },
 ]
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 px-6 bg-background">
+    <section id="features" className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Возможности нового поколения</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Почему выбирают longotipdef</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Почувствуйте будущее с технологиями, которые переопределяют возможное
+            Защита, которой можно доверять — быстро, надёжно и по честной цене
           </p>
         </div>
 
@@ -60,14 +61,7 @@ export function FeaturesSection() {
             >
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-3xl">
-                    {feature.icon === "brain" && "&#129504;"}
-                    {feature.icon === "lock" && "&#128274;"}
-                    {feature.icon === "globe" && "&#127760;"}
-                    {feature.icon === "zap" && "&#9889;"}
-                    {feature.icon === "link" && "&#128279;"}
-                    {feature.icon === "target" && "&#127919;"}
-                  </span>
+                  <Icon name={feature.icon} size={32} className="text-red-500" />
                   <Badge variant="secondary" className="bg-accent text-accent-foreground">
                     {feature.badge}
                   </Badge>
