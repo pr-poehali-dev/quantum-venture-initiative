@@ -3,10 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Icon from "@/components/ui/icon"
 
-const plans = [
+export const PLANS = [
   {
     name: "Обычный",
     price: "100₽",
+    amount: 100,
     badge: null,
     description: "Базовая дефа-защита для начала",
     features: ["Стандартная защита", "Быстрая выдача", "Поддержка в Telegram"],
@@ -15,6 +16,7 @@ const plans = [
   {
     name: "Apex",
     price: "150₽",
+    amount: 150,
     badge: "Популярный",
     description: "Расширенная защита для уверенной игры",
     features: ["Apex-уровень защиты", "Быстрая выдача", "Поддержка в Telegram", "Приоритетная обработка"],
@@ -23,6 +25,7 @@ const plans = [
   {
     name: "Full",
     price: "259₽",
+    amount: 259,
     badge: "Максимум",
     description: "Полная защита без ограничений",
     features: ["Полная защита", "Мгновенная выдача", "Поддержка 24/7", "Приоритетная обработка", "Все возможности"],
@@ -31,7 +34,7 @@ const plans = [
 ]
 
 interface PlansSectionProps {
-  onBuyClick?: () => void
+  onBuyClick?: (planName: string, amount: number) => void
 }
 
 export function PlansSection({ onBuyClick }: PlansSectionProps) {
@@ -46,7 +49,7 @@ export function PlansSection({ onBuyClick }: PlansSectionProps) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          {plans.map((plan, index) => (
+          {PLANS.map((plan, index) => (
             <Card
               key={index}
               className={`relative transition-all duration-300 slide-up ${
@@ -76,7 +79,7 @@ export function PlansSection({ onBuyClick }: PlansSectionProps) {
                   ))}
                 </ul>
                 <Button
-                  onClick={onBuyClick}
+                  onClick={() => onBuyClick?.(plan.name, plan.amount)}
                   className={`w-full text-white font-orbitron ${
                     plan.highlight
                       ? "bg-red-500 hover:bg-red-600 pulse-button"

@@ -35,6 +35,9 @@ export function Navbar({ onBuyClick }: NavbarProps) {
               <a href="#faq" className="font-geist text-white hover:text-red-500 transition-colors duration-200">
                 Вопросы
               </a>
+              <a href="/receipts" className="font-geist text-white hover:text-red-500 transition-colors duration-200">
+                Чеки
+              </a>
             </div>
           </div>
 
@@ -78,6 +81,13 @@ export function Navbar({ onBuyClick }: NavbarProps) {
                 onClick={() => setIsOpen(false)}
               >
                 Вопросы
+              </a>
+              <a
+                href="/receipts"
+                className="block px-3 py-2 font-geist text-white hover:text-red-500 transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Чеки
               </a>
               <div className="px-3 py-2">
                 <Button onClick={onBuyClick} className="w-full bg-red-500 hover:bg-red-600 text-white font-geist border-0">
